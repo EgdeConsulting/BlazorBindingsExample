@@ -1,0 +1,32 @@
+﻿@page "/examples"
+<CollapsibleItem @ref="_items[0]" Title="Example 1" OnToggleShow="ToggleShow">
+    <BreadcrumbExample1 />
+</CollapsibleItem>
+
+<CollapsibleItem @ref="_items[1]" Title="Example 2" OnToggleShow="ToggleShow">
+    <BreadcrumbExample2 />
+</CollapsibleItem>
+
+<CollapsibleItem @ref="_items[2]" Title="Example 3" OnToggleShow="ToggleShow">
+    <BreadcrumbExample3 />
+</CollapsibleItem>
+
+<CollapsibleItem @ref="_items[3]" Title="Example 4" OnToggleShow="ToggleShow">
+    <BreadcrumbExample4 />
+</CollapsibleItem>
+
+<CollapsibleItem @ref="_items[4]" Title="Example 5" OnToggleShow="ToggleShow">
+    <BreadcrumbExample5 />
+</CollapsibleItem>
+
+@code{
+    private readonly CollapsibleItem[] _items = new CollapsibleItem[5];
+
+    private void ToggleShow(CollapsibleItem item)
+    {
+        foreach (var currentItem in _items.Where(x => x != item))
+        {
+            currentItem.Show = false;
+        }
+    }
+}

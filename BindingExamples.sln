@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29924.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BindingExamples.Server", "BindingExamples\Server\BindingExamples.Server.csproj", "{1FC664A2-6457-4CC5-A644-B856C8E28F44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BindingExamples.Client", "BindingExamples\Client\BindingExamples.Client.csproj", "{9EB5B449-13B7-44D0-8FD3-C939E91F7B54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FC664A2-6457-4CC5-A644-B856C8E28F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC664A2-6457-4CC5-A644-B856C8E28F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC664A2-6457-4CC5-A644-B856C8E28F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC664A2-6457-4CC5-A644-B856C8E28F44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EB5B449-13B7-44D0-8FD3-C939E91F7B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB5B449-13B7-44D0-8FD3-C939E91F7B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB5B449-13B7-44D0-8FD3-C939E91F7B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB5B449-13B7-44D0-8FD3-C939E91F7B54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B41412E-7EED-4560-AC63-D736390AA4A7}
+	EndGlobalSection
+EndGlobal

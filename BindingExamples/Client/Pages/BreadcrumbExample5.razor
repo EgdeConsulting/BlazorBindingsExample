@@ -1,0 +1,31 @@
+﻿@inject IJSRuntime JsRuntime
+
+<button @onclick="OnReset">Reset</button>
+<Breadcrumb Sections="_sections" @bind-ActiveSection="Section"></Breadcrumb>
+<p>@_mirror</p>
+@code {
+
+    private readonly string[] _sections = { "One", "Two", "Three" };
+    private string _section;
+    private string _mirror;
+
+    private string Section
+    {
+        get => _section;
+        set
+        {
+            _section = value;
+            OnSectionChanged(value);
+        }
+    }
+
+    private void OnSectionChanged(string section)
+    {
+        _mirror = section;
+    }
+
+    private void OnReset()
+    {
+        Section = null;
+    }
+}

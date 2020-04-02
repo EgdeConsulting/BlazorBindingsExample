@@ -1,0 +1,12 @@
+﻿@if (!string.IsNullOrEmpty(_activeSection))
+{
+    <span class="badge badge-primary">@_activeSection</span>
+}
+
+<Breadcrumb Sections="_sections" @bind-ActiveSection="@_activeSection"></Breadcrumb>
+
+@code {
+
+    private readonly string[] _sections = { "One", "Two", "Three" };
+    private string _activeSection;
+}

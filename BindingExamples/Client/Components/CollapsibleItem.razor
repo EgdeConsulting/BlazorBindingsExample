@@ -1,0 +1,23 @@
+﻿<div class="card">
+    <h5 @onclick="ToggleShow" class="card-header">@Title</h5>
+    <div class="collapse @ShowCssClass">
+        <div class="card-body">
+            @ChildContent
+        </div>
+    </div>
+</div>
+
+@code {
+    private string ShowCssClass => !Show ? string.Empty : "show";
+    public bool Show { get; set; }
+
+    [Parameter] public string Title { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public EventCallback<CollapsibleItem> OnToggleShow { get; set; }
+
+    private void ToggleShow()
+    {
+        Show = !Show;
+        OnToggleShow.InvokeAsync(this);
+    }
+}

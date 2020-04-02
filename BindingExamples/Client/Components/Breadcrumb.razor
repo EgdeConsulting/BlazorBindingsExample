@@ -1,0 +1,8 @@
+﻿<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        @foreach (var section in Sections)
+        {
+            <li @onclick="() => OnClick(section)" class="breadcrumb-item @CssClass(section)">@section</li>
+        }
+    </ol>
+</nav>

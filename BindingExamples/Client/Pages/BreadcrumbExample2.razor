@@ -1,0 +1,22 @@
+﻿<Breadcrumb Sections="_sections" ActiveSection="@_activeSection"></Breadcrumb>
+
+@code {
+
+    private readonly string[] _sections = { "One", "Two", "Three" };
+    private string _activeSection;
+
+    protected override void OnInitialized()
+    {
+        Task.Run(async () =>
+        {
+            while (true)
+            {
+                var index = Array.IndexOf(_sections, _activeSection);
+                index = (index + 1) % _sections.Length;
+                _activeSection = _sections[index];
+                //StateHasChanged();
+                await Task.Delay(1500);
+            }
+        });
+    }
+}

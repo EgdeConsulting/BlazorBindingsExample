@@ -1,0 +1,23 @@
+﻿<Breadcrumb Sections="_sections"></Breadcrumb>
+
+<textarea cols="30" rows="6" @bind-value="ElementsInput" @bind-value:event="oninput"></textarea>
+
+@code {
+
+    private string[] _sections;
+    private string _elementsInput;
+    private string ElementsInput
+    {
+        get => _elementsInput;
+        set
+        {
+            _elementsInput = value;
+            OnElementsChanged(value);
+        }
+    }
+
+    private void OnElementsChanged(string value)
+    {
+        _sections = value.GetLines(true);
+    }
+}

@@ -1,0 +1,17 @@
+﻿@inject IJSRuntime JsRuntime
+
+<Breadcrumb Sections="_sections" ActiveSectionChanged="OnSectionChanged"></Breadcrumb>
+
+@code {
+
+    private readonly string[] _sections = { "One", "Two", "Three" };
+
+    private async Task OnSectionChanged(string section)
+    {
+        // We want the active item color to update before
+        // we're showing the blocking dialog, so we yield
+        // this time slice so Blazor can do that.
+        await Task.Yield();
+        await JsRuntime.InvokeVoidAsync("alert", $"Active section was changed to '{section}'");
+    }
+}
